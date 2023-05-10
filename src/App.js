@@ -8,6 +8,7 @@ import Post from "./components/Post";
 function App() {
   return (
     <div >
+      giriş sayfası
    <Header/>
    <Hero/>
    <Movies/> 
