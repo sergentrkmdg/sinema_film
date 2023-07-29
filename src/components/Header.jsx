@@ -1,8 +1,14 @@
 import React from 'react';
+import {BsLightbulb, BsBasketFill} from "react-icons/bs";
+import {useDispatch} from "react-redux";
 
 function Header() { 
+
+  const dispatch= useDispatch();
+
   return (
   <div className="dark:bg-black bg-white py-6 lg:py-12 dark:text-gega-grey text-black uppercase"> 
+    
     {/*  <!--Header Container-->*/}
     <div className="container flex items-center justify-between space-x-8 lg:space-x-16">
     {/* <!-- Logo -->*/}
@@ -38,6 +44,10 @@ function Header() {
        <div className="flex items-center space-x-4 lg:space-x-8 lg:text-lg"> 
          <a href="#">Login</a>
          <a href="#" className="bg-gega-red px-3 py-1 hover:bg-rose-600 hover:text-gega-grey cursor-pointer transition duration-500 whitespace-nowrap">Sign Up</a>
+      <div onClick={()=>dispatch({type:"DRAWER",payload:true})} className=' relative float-right'>
+      <BsBasketFill size={20} className='cursor-pointer ' />
+      <span className='absolute -top-2 -right-3 px-2 bg-red-600 text-white rounded-full text-xs '>3</span>
+    </div>
        </div>
      </div>
      </nav>
